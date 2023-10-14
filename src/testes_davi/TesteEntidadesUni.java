@@ -1,19 +1,19 @@
-package br.gov.cesarschool.poo.bonusvendas.testes;
+package testes_davi;
+
+
+import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-
 import br.gov.cesarschool.poo.bonusvendas.entidade.CaixaDeBonus;
 import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;
 
-public class TesteEntidades {
+public class TesteEntidadesUni {
 	@Test
 	public void testCalcularIdade() {
 		LocalDate dataNasc = LocalDate.parse("2001-01-01");
