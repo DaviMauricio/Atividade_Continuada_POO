@@ -1,0 +1,60 @@
+# Arquivos compilados Java #
+*.class
+
+# Diretório de construção #
+target/
+build/
+out/
+
+# Diretórios criados pelo Maven #
+target/
+*.war
+*.ear
+
+# Arquivos e diretórios criados pelo Eclipse #
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+*.classpath
+.settings/
+.loadpath
+
+# Arquivos e diretórios criados pelo IntelliJ IDEA #
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Arquivos do macOS #
+*.DS_Store
+*.AppleDouble
+.LSOverride
+
+# Icon? #
+Icon
+
+# Thumbnails #
+._*
+
+# Arquivos que podem aparecer no diretório raiz de um volume externo #
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Arquivos do Windows (caso você trabalhe com ambos) #
+Thumbs.db
+Desktop.ini
+
+.classpath
