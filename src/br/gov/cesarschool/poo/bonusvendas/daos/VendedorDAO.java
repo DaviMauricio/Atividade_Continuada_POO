@@ -28,6 +28,7 @@ public class VendedorDAO {
 		}
 		
 	}
+
 	
 	public Vendedor buscar(String cpf) {
 		return (Vendedor)cadastro.buscar(BRANCO + cpf);
