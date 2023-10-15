@@ -21,7 +21,7 @@ public class AcumuloResgateMediator {
         this.repositorioLancamento = new LancamentoBonusDAO();
     }
 
-    public static synchronized AcumuloResgateMediator getInstance() {
+    public static AcumuloResgateMediator getInstance() {
         if (instance == null) {
             instance = new AcumuloResgateMediator();
         }
@@ -29,14 +29,16 @@ public class AcumuloResgateMediator {
     }
 
     public long gerarCaixaDeBonus(Vendedor vendedor) {
+        String cpfVendedor = vendedor.getCpf();
+        cpfVendedor = cpfVendedor.substring(0, cpfVendedor.length() - 2);
         LocalDate today = LocalDate.now();
-        String caixaIdStr = vendedor.getCpf() + today.getYear() + String.format("%02d", today.getMonthValue()) + String.format("%02d", today.getDayOfMonth());
+        
+        String caixaIdStr = cpfVendedor + today.getYear() + String.format("%d", today.getMonthValue()) + String.format("%d", today.getDayOfMonth());
         long caixaId = Long.parseLong(caixaIdStr);
         
         CaixaDeBonus novaCaixa = new CaixaDeBonus(caixaId);
-        boolean wasInserted = repositorioCaixaDeBonus.incluir(novaCaixa);
         
-        if(wasInserted) {
+        if(repositorioCaixaDeBonus.incluir(novaCaixa)) {
             return caixaId;
         } else {
             return 0;

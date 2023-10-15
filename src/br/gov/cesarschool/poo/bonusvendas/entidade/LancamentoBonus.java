@@ -27,4 +27,5 @@ public class LancamentoBonus implements Serializable {
 	 public LocalDateTime getDataHoraLancamento() {
 		 return dataHoraLancamento;
 	 }
+	 
 }

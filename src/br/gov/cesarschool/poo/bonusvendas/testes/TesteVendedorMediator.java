@@ -372,8 +372,8 @@ public class TesteVendedorMediator extends TesteGeral {
 		        new Endereco(LOGR_VALIDO, NUMERO_VALIDO, COMPL_VALIDO, CEP_VALIDO, 
 		        		CIDADE_VALIDA, ESTADO_VALIDO, PAIS_VALIDO));
 		for (int i=0; i< VENDS_INVALIDOS.length; i++) {
-			assertAlteracaoNaoRealizada(vendOri, VENDS_INVALIDOS[i], MSGS_VENDS_INVALIDOS[i]);
-		}
+            assertAlteracaoNaoRealizada(vendOri, VENDS_INVALIDOS[i], MSGS_VENDS_INVALIDOS[i]);
+        }
 	}
 	@Test
 	public void testAlterarSucesso() {		

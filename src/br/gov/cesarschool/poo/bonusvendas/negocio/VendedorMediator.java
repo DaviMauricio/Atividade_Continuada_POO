@@ -18,7 +18,7 @@ public class VendedorMediator {
         this.caixaDeBonusMediator = AcumuloResgateMediator.getInstance();
     }
 
-    public static synchronized VendedorMediator getInstance() {
+    public static VendedorMediator getInstance() {
         if (instance == null) {
             instance = new VendedorMediator();
         }
@@ -41,7 +41,7 @@ public class VendedorMediator {
 
     public String alterar(Vendedor vendedor) {
         String erro = validar(vendedor);
-        if (erro != null) {
+        if (erro == null) {
             return erro;
         }
 
@@ -57,9 +57,11 @@ public class VendedorMediator {
             return "Vendedor não informado";
         }
 
-        if (ValidadorCPF.ehCpfValido(vendedor.getCpf())) {
-            return "CPF inválido";
-        }
+        if (StringUtil.ehNuloOuBranco(vendedor.getCpf())) {
+			return "CPF nao informado";
+		}else if(ValidadorCPF.ehCpfValido(vendedor.getCpf()) == false) {
+			return "CPF invalido";
+		}
 
         if (StringUtil.ehNuloOuBranco(vendedor.getNomeCompleto())) {
             return "Nome completo não informado ou é uma string vazia";

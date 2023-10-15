@@ -20,7 +20,8 @@ public class VendedorDAO {
 	
 	public boolean alterar(Vendedor vendedor) {
 		Vendedor vendedorBusca = buscar(vendedor.getCpf());
-		if (vendedorBusca != null) {
+		
+		if (vendedorBusca == null) {
 			return false;
 		}else {
 			cadastro.alterar(vendedor, BRANCO + vendedor.getCpf());

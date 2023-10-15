@@ -11,7 +11,7 @@ public class LancamentoBonusDAO implements Serializable{
     
     public boolean incluir(LancamentoBonus lancamento) {
         LancamentoBonus lancamentoBusca = buscar(BRANCO + lancamento.getNumeroCaixaDeBonus());
-        if (lancamentoBusca != null) {
+        if (lancamentoBusca == null) {
             return false;
         } else {
             cadastro.incluir(lancamento, BRANCO + lancamento.getNumeroCaixaDeBonus());
