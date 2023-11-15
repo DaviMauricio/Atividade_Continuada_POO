@@ -20,10 +20,9 @@ import x.y.z.w.k.Glosb;
 public class TesteAcumuloResgateMediator extends TesteGeral {
 	
 	private static final long NUMERO_CX_BONUS = 12345678920230101L;
-	private static final String CAIXA_DE_BONUS_INEXISTENTE = "Caixa de bonus inexistente";
-	private static final String VALOR_MENOR_OU_IGUAL_A_ZERO = "Valor menor ou igual a zero";
+		
 	protected CadastroObjetos cadastroLanc = new CadastroObjetos(LancamentoBonus.class);
-	private AcumuloResgateMediator mediator = AcumuloResgateMediator.getInstance();
+	private AcumuloResgateMediator mediator = AcumuloResgateMediator.getInstancia();
 	@Test
 	public void testNaoGerarNumeroCaixaBonus() {
 		excluirVendedoresCaixasBonusLancamentos();
@@ -70,8 +69,8 @@ public class TesteAcumuloResgateMediator extends TesteGeral {
 		Assertions.assertNotNull(caixaBonusNova);
 		Assertions.assertEquals(caixaBonusNova.getNumero(), cbRef.getNumero());
 		Assertions.assertEquals(caixaBonusNova.getSaldo(), cbRef.getSaldo());	
-		// A data hora atualiza��o deve ser a data hora atual, atribu�da ao atributo dataHoraAtualizacao
-		// da CaixaDeBonus no construtor desta.  N�o � um atributo controlado pelo usu�rio nem pelo mediator. 
+		// A data hora atualização deve ser a data hora atual, atribuída ao atributo dataHoraAtualizacao
+		// da CaixaDeBonus no construtor desta.  Não é um atributo controlado pelo usuário nem pelo mediator. 
 		Assertions.assertNotNull(caixaBonusNova.getDataHoraAtualizacao());
 	}
 	

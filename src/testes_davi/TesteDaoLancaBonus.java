@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.gov.cesarschool.poo.bonusvendas.daos.LancamentoBonusDAO;
+import br.gov.cesarschool.poo.bonusvendas.dao.LancamentoBonusDAO;
 import br.gov.cesarschool.poo.bonusvendas.entidade.LancamentoBonus;
 
 import java.time.LocalDateTime;

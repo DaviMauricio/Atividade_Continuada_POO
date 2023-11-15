@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import br.gov.cesarschool.poo.bonusvendas.daos.VendedorDAO;
+import br.gov.cesarschool.poo.bonusvendas.dao.VendedorDAO;
 import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Endereco;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Sexo;

@@ -1,23 +1,17 @@
 package br.gov.cesarschool.poo.bonusvendas.negocio;
 
 public class ResultadoInclusaoVendedor {
-
-    private Long numeroCaixaDeBonus;
-    private String mensagemErroValidacao;
-
-    public long getNumeroCaixaDeBonus() {
-        return numeroCaixaDeBonus != null ? numeroCaixaDeBonus : 0L;
-    }
-
-    public String getMensagemErroValidacao() {
-        return mensagemErroValidacao;
-    }
-
-    public void setNumeroCaixaDeBonus(Long numeroCaixaDeBonus) {
-        this.numeroCaixaDeBonus = numeroCaixaDeBonus;
-    }
-
-    public void setMensagemErroValidacao(String mensagemErroValidacao) {
-        this.mensagemErroValidacao = mensagemErroValidacao;
-    }
+	private long numeroCaixaDeBonus;
+	private String mensagemErroValidacao;
+	public ResultadoInclusaoVendedor(long numeroCaixaDeBonus, String mensagemErroValidacao) {
+		super();
+		this.numeroCaixaDeBonus = numeroCaixaDeBonus;
+		this.mensagemErroValidacao = mensagemErroValidacao;
+	}
+	public long getNumeroCaixaDeBonus() {
+		return numeroCaixaDeBonus;
+	}
+	public String getMensagemErroValidacao() {
+		return mensagemErroValidacao;
+	}
 }

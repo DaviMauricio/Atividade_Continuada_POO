@@ -1,23 +1,30 @@
 package br.gov.cesarschool.poo.bonusvendas.entidade;
-	
-public enum TipoResgate {
-	PRODUTO(1, "Produto"), 
-	SERVICO(2, "Servico"), 
-	CASH(3,"Cash");  
-	
+
+import java.io.Serializable;
+
+public enum TipoResgate implements Serializable {
+	PRODUTO (1,"Produto"), 
+	SERVICO (2,"Servi�o"), 
+	CASH (3,"Cash");
 	private int codigo;
-	private String descricao;
-	
-	private TipoResgate(int codigo, String descricao) {
+	private String nome;
+	private TipoResgate(int codigo, String nome) {
 		this.codigo = codigo;
-		this.descricao = descricao;
+		this.nome = nome;
 	}
 	public int getCodigo() {
 		return codigo;
 	}
-
-	public String getDescricao() {
-		return descricao;
+	public String getNome() {
+		return nome;
+	}
+	public static TipoResgate obterSexo(int codigo) {
+		for (TipoResgate tipoResgate : TipoResgate.values()) {
+			if (tipoResgate.codigo == codigo) {
+				return tipoResgate;
+			}
+		}
+		return null;
 	}
 
 }
