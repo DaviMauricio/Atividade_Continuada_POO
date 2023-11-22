@@ -1,8 +1,5 @@
 package br.gov.cesarschool.poo.bonusvendas.dao;
 
-import java.io.Serializable;
-
-import br.edu.cesarschool.next.oo.persistenciaobjetos.CadastroObjetos;
 import br.gov.cesarschool.poo.bonusvendas.entidade.CaixaDeBonus;
 import br.gov.cesarschool.poo.bonusvendas.entidade.geral.Registro;
 
