@@ -1,8 +1,18 @@
+/*Alterar a classe VendedorMediator
+➔ Um novo método público Vendedor[] gerarListagemClienteOrdenadaPorRenda()
+o O método deve chamar o buscar todos do DAO, e o retorno deste método
+deve ser ordenado e retornado. A ordenação deve ser feita usando-se as
+classes Ordenadora e ComparadorVendedorRenda. A listagem retornada
+corresponde à lista de todos os vendedores cadastrados ordenada por renda
+em ordem crescente.*/
+
+
 package br.gov.cesarschool.poo.bonusvendas.negocio;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import br.gov.cesarschool.poo.bonusvendas.util.Ordenadora;
 import br.gov.cesarschool.poo.bonusvendas.dao.VendedorDAO;
 import br.gov.cesarschool.poo.bonusvendas.entidade.Vendedor;
 import br.gov.cesarschool.poo.bonusvendas.negocio.geral.StringUtil;
@@ -48,6 +58,17 @@ public class VendedorMediator {
 		}
 		return msg;
 	}
+	public Vendedor[] gerarListagemClienteOrdenadaPorNome() {
+		Vendedor[] vendedores = repositorioVendedor.buscarTodos();
+		Ordenadora.ordenar(vendedores, ComparadorVendedorNome.getInstance());
+		return vendedores;
+	}
+	public Vendedor[] gerarListagemClienteOrdenadaPorRenda() {
+		Vendedor[] vendedores = repositorioVendedor.buscarTodos();
+		Ordenadora.ordenar(vendedores, ComparadorVendedorRenda.getInstance());	
+		return vendedores;
+	}
+
 	private String validar(Vendedor vendedor) {
 		if (StringUtil.ehNuloOuBranco(vendedor.getCpf())) {
 			return "CPF nao informado";
