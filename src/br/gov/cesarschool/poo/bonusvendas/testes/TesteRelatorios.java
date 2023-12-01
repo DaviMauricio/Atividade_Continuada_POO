@@ -180,7 +180,7 @@ public class TesteRelatorios extends TesteGeral {
 	@Test
 	public void testRelatorioLancamento() {
 		excluirVendedoresCaixasBonusLancamentos(); 
-		List lancs = new ArrayList();
+		List<LancamentoBonus> lancs = new ArrayList();
 		LocalDateTime dh1 = LocalDateTime.parse("2001-01-01T23:59:59");
 		LocalDateTime dh2 = LocalDateTime.parse("2020-12-01T11:02:01");
 		LocalDateTime dh3 = LocalDateTime.parse("2020-12-02T22:33:11");

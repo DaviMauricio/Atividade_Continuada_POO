@@ -9,7 +9,7 @@ public class VendedorDAO {
 	private DAOGenerico dao; 
 	
 	public VendedorDAO() {
-		this.dao = new DAOGenerico(Vendedor.class);
+		dao = new DAOGenerico(Vendedor.class);
 	}
 	
 	
