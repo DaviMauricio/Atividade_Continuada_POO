@@ -36,6 +36,6 @@ public class LancamentoBonus extends Registro
 		// revisar
 		// logica ta no metodo obterIdUnico da classe LancamentoBonusDAO
 		DateTimeFormatter customFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-		return getNumeroCaixaDeBonus() + getDataHoraLancamento().format(customFormatter) + "";
+		return getNumeroCaixaDeBonus() + getDataHoraLancamento().format(customFormatter);
 	}
 }
